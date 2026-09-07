@@ -9,6 +9,7 @@ import { StatsBar } from "@/components/homepage/StatsBar";
 import { BuyRentSell } from "@/components/homepage/BuyRentSell";
 import { FeaturedProperties } from "@/components/homepage/FeaturedProperties";
 import { LatestProperties } from "@/components/homepage/LatestProperties";
+import { RentalsSection } from "@/components/homepage/RentalsSection";
 export default function HomePage() {
   const router = useRouter();
 
@@ -17,8 +18,10 @@ export default function HomePage() {
   const [propType, setPropType] = useState("");
 
   const [latest, setLatest] = useState<Property[]>([]);
+  const [rentals, setRentals] = useState<Property[]>([]);
   const [featured, setFeatured] = useState<Property[]>([]);
   const [loadingLatest, setLoadingLatest] = useState(true);
+  const [loadingRentals, setLoadingRentals] = useState(true);
   const [loadingFeatured, setLoadingFeatured] = useState(true);
 
   useEffect(() => {
@@ -72,6 +75,8 @@ export default function HomePage() {
       <BuyRentSell />
       <FeaturedProperties properties={featured} loading={loadingFeatured} />
       <LatestProperties properties={latest} loading={loadingLatest} />
+      <RentalsSection rentals={rentals} loading={loadingRentals} />
+
     </div>
   );
 }
