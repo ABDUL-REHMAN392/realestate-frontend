@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { propertyApi } from "@/lib/api";
 import { HeroSection } from "@/components/homepage/HeroSection";
 import { StatsBar } from "@/components/homepage/StatsBar";
+import { BuyRentSell } from "@/components/homepage/BuyRentSell";
 export default function HomePage() {
   const router = useRouter();
 
@@ -61,6 +62,7 @@ export default function HomePage() {
         }
       />
       <StatsBar/>
+      <BuyRentSell/>
     </div>
   );
 }
