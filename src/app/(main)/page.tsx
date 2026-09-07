@@ -13,6 +13,7 @@ import { RentalsSection } from "@/components/homepage/RentalsSection";
 import { BrowseByCity } from "@/components/homepage/BrowseByCity";
 import { PropertyTypes } from "@/components/homepage/PropertyTypes";
 import { WhyGharFind } from "@/components/homepage/WhyGharFind";
+import { HowItWorks } from "@/components/homepage/HowItWorks";
 export default function HomePage() {
   const router = useRouter();
 
@@ -82,10 +83,7 @@ export default function HomePage() {
       <BrowseByCity />
       <PropertyTypes />
       <WhyGharFind />
-
-
-
-
+      <HowItWorks />
     </div>
   );
 }
