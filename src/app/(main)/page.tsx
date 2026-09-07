@@ -4,6 +4,8 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { propertyApi } from "@/lib/api";
+import { Property } from "@/components/homepage/PropCard";
+
 import { HeroSection } from "@/components/homepage/HeroSection";
 import { StatsBar } from "@/components/homepage/StatsBar";
 import { BuyRentSell } from "@/components/homepage/BuyRentSell";
@@ -15,8 +17,10 @@ import { PropertyTypes } from "@/components/homepage/PropertyTypes";
 import { WhyGharFind } from "@/components/homepage/WhyGharFind";
 import { HowItWorks } from "@/components/homepage/HowItWorks";
 import { Testimonials } from "@/components/homepage/Testimonials";
-import { TrustedPartners } from "@/components/homepage/TrustedPartners";
 import { AgentCTA } from "@/components/homepage/AgentCTA";
+import { TrustedPartners } from "@/components/homepage/TrustedPartners";
+import { FAQSection } from "@/components/homepage/FAQSection";
+
 export default function HomePage() {
   const router = useRouter();
 
@@ -90,6 +94,7 @@ export default function HomePage() {
       <Testimonials />
       <TrustedPartners />
       <AgentCTA />
+      <FAQSection />
     </div>
   );
 }
