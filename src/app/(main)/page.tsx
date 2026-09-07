@@ -76,6 +76,8 @@ export default function HomePage() {
       <FeaturedProperties properties={featured} loading={loadingFeatured} />
       <LatestProperties properties={latest} loading={loadingLatest} />
       <RentalsSection rentals={rentals} loading={loadingRentals} />
+      <BrowseByCity />
+
 
     </div>
   );
