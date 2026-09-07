@@ -10,6 +10,8 @@ import { BuyRentSell } from "@/components/homepage/BuyRentSell";
 import { FeaturedProperties } from "@/components/homepage/FeaturedProperties";
 import { LatestProperties } from "@/components/homepage/LatestProperties";
 import { RentalsSection } from "@/components/homepage/RentalsSection";
+import { BrowseByCity } from "@/components/homepage/BrowseByCity";
+import { PropertyTypes } from "@/components/homepage/PropertyTypes";
 export default function HomePage() {
   const router = useRouter();
 
@@ -77,6 +79,8 @@ export default function HomePage() {
       <LatestProperties properties={latest} loading={loadingLatest} />
       <RentalsSection rentals={rentals} loading={loadingRentals} />
       <BrowseByCity />
+      <PropertyTypes />
+
 
 
     </div>
