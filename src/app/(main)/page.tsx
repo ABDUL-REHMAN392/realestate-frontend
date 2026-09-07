@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { propertyApi } from "@/lib/api";
 import { HeroSection } from "@/components/homepage/HeroSection";
+import { StatsBar } from "@/components/homepage/StatsBar";
 export default function HomePage() {
   const router = useRouter();
 
@@ -59,6 +60,7 @@ export default function HomePage() {
           router.push(`/properties?city=${city}&purpose=${purpose}`)
         }
       />
+      <StatsBar/>
     </div>
   );
 }
