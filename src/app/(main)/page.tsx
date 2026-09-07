@@ -7,12 +7,16 @@ import { propertyApi } from "@/lib/api";
 import { HeroSection } from "@/components/homepage/HeroSection";
 import { StatsBar } from "@/components/homepage/StatsBar";
 import { BuyRentSell } from "@/components/homepage/BuyRentSell";
+import { FeaturedProperties } from "@/components/homepage/FeaturedProperties";
 export default function HomePage() {
   const router = useRouter();
 
   const [searchText, setSearchText] = useState("");
   const [purpose, setPurpose] = useState("sale");
   const [propType, setPropType] = useState("");
+
+  const [featured, setFeatured] = useState<Property[]>([]);
+  const [loadingFeatured, setLoadingFeatured] = useState(true);
 
   useEffect(() => {
     propertyApi
@@ -61,8 +65,9 @@ export default function HomePage() {
           router.push(`/properties?city=${city}&purpose=${purpose}`)
         }
       />
-      <StatsBar/>
-      <BuyRentSell/>
+      <StatsBar />
+      <BuyRentSell />
+      <FeaturedProperties properties={featured} loading={loadingFeatured} />
     </div>
   );
 }
