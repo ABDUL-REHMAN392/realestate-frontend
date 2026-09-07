@@ -8,6 +8,7 @@ import { HeroSection } from "@/components/homepage/HeroSection";
 import { StatsBar } from "@/components/homepage/StatsBar";
 import { BuyRentSell } from "@/components/homepage/BuyRentSell";
 import { FeaturedProperties } from "@/components/homepage/FeaturedProperties";
+import { LatestProperties } from "@/components/homepage/LatestProperties";
 export default function HomePage() {
   const router = useRouter();
 
@@ -15,7 +16,9 @@ export default function HomePage() {
   const [purpose, setPurpose] = useState("sale");
   const [propType, setPropType] = useState("");
 
+  const [latest, setLatest] = useState<Property[]>([]);
   const [featured, setFeatured] = useState<Property[]>([]);
+  const [loadingLatest, setLoadingLatest] = useState(true);
   const [loadingFeatured, setLoadingFeatured] = useState(true);
 
   useEffect(() => {
@@ -68,6 +71,7 @@ export default function HomePage() {
       <StatsBar />
       <BuyRentSell />
       <FeaturedProperties properties={featured} loading={loadingFeatured} />
+      <LatestProperties properties={latest} loading={loadingLatest} />
     </div>
   );
 }
