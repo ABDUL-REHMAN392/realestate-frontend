@@ -15,6 +15,7 @@ import { PropertyTypes } from "@/components/homepage/PropertyTypes";
 import { WhyGharFind } from "@/components/homepage/WhyGharFind";
 import { HowItWorks } from "@/components/homepage/HowItWorks";
 import { Testimonials } from "@/components/homepage/Testimonials";
+import { TrustedPartners } from "@/components/homepage/TrustedPartners";
 export default function HomePage() {
   const router = useRouter();
 
@@ -86,6 +87,8 @@ export default function HomePage() {
       <WhyGharFind />
       <HowItWorks />
       <Testimonials />
+      <TrustedPartners />
+
 
     </div>
   );
