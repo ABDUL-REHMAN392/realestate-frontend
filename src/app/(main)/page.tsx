@@ -16,6 +16,7 @@ import { WhyGharFind } from "@/components/homepage/WhyGharFind";
 import { HowItWorks } from "@/components/homepage/HowItWorks";
 import { Testimonials } from "@/components/homepage/Testimonials";
 import { TrustedPartners } from "@/components/homepage/TrustedPartners";
+import { AgentCTA } from "@/components/homepage/AgentCTA";
 export default function HomePage() {
   const router = useRouter();
 
@@ -88,8 +89,7 @@ export default function HomePage() {
       <HowItWorks />
       <Testimonials />
       <TrustedPartners />
-
-
+      <AgentCTA />
     </div>
   );
 }
