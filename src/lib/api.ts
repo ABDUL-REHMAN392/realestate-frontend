@@ -134,4 +134,15 @@ export const propertyApi = {
     api.patch(`/properties/${id}/status`, { status }),
 };
 
+// ─────────────────────────────────────────────
+// Notifications
+// ─────────────────────────────────────────────
+export const notificationApi = {
+  getAll:      (params?: object) => api.get("/notifications", { params }),
+  getUnread:   ()                => api.get("/notifications/unread-count"),
+  markRead:    (id: string)      => api.patch(`/notifications/${id}/read`),
+  markAllRead: ()                => api.patch("/notifications/read-all"),
+  delete:      (id: string)      => api.delete(`/notifications/${id}`),
+};
+
 export default api;
