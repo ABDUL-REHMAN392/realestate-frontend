@@ -103,6 +103,39 @@ export const userApi = {
 };
 
 // ─────────────────────────────────────────────
+// Agent endpoints
+// ─────────────────────────────────────────────
+export const agentApi = {
+  getApplicationStatus: () => api.get("/agents/application/status"),
+  apply: (formData: FormData) =>
+    api.post("/agents/profile", formData, {
+      headers: { "Content-Type": "multipart/form-data" },
+    }),
+  getMyProfile:    () => api.get("/agents/profile/me"),
+  updateMyProfile: (payload: object) => api.patch("/agents/profile/me", payload),
+  deleteMyProfile: () => api.delete("/agents/profile/me"),
+  getAllAgents:    (params?: object) => api.get("/agents", { params }),
+  getAgentById:   (agentId: string) => api.get(`/agents/${agentId}`),
+  getAgentByUser: (userId: string)  => api.get(`/agents/user/${userId}`),
+  getListings:    (agentId: string, params?: object) =>
+    api.get(`/agents/${agentId}/listings`, { params }),
+  getReviews:     (agentId: string, params?: object) =>
+    api.get(`/agents/${agentId}/reviews`, { params }),
+  addReview:    (agentId: string, payload: object) =>
+    api.post(`/agents/${agentId}/reviews`, payload),
+  updateReview: (reviewId: string, payload: object) =>
+    api.patch(`/agents/reviews/${reviewId}`, payload),
+  deleteReview: (reviewId: string) =>
+    api.delete(`/agents/reviews/${reviewId}`),
+  getAllApplications: (params?: object) =>
+    api.get("/agents/applications", { params }),
+  verifyAgent: (agentId: string, isVerified: boolean, rejectionReason?: string) =>
+    api.patch(`/agents/${agentId}/verify`, { isVerified, rejectionReason }),
+  deleteAgent: (agentId: string) => api.delete(`/agents/${agentId}`),
+  getAnalytics: () => api.get("/agents/analytics/me"),
+};
+
+// ─────────────────────────────────────────────
 // Property endpoints
 // ─────────────────────────────────────────────
 export const propertyApi = {
