@@ -72,6 +72,37 @@ api.interceptors.response.use(
 );
 
 // ─────────────────────────────────────────────
+// Auth endpoints
+// ─────────────────────────────────────────────
+export const authApi = {
+  register:       (payload: object) => api.post("/auth/register", payload),
+  login:          (payload: object) => api.post("/auth/login", payload),
+  refresh:        () => api.post("/auth/refresh"),
+  logout:         () => api.post("/auth/logout"),
+  changePassword: (payload: object) => api.patch("/auth/change-password", payload),
+  oauth:          (payload: object) => api.post("/auth/oauth", payload),
+};
+
+// ─────────────────────────────────────────────
+// User endpoints
+// ─────────────────────────────────────────────
+export const userApi = {
+  getMe:        () => api.get("/users/me"),
+  updateMe:     (payload: object) => api.patch("/users/me", payload),
+  deleteMe:     (password?: string) =>
+    api.delete("/users/me", { data: password ? { password } : {} }),
+  uploadAvatar: (formData: FormData) =>
+    api.post("/users/me/avatar", formData, {
+      headers: { "Content-Type": "multipart/form-data" },
+    }),
+  deleteAvatar: () => api.delete("/users/me/avatar"),
+  getAllUsers:       (params?: object) => api.get("/users", { params }),
+  getUserById:       (id: string) => api.get(`/users/${id}`),
+  toggleUserStatus:  (id: string, isActive: boolean) =>
+    api.patch(`/users/${id}/status`, { isActive }),
+};
+
+// ─────────────────────────────────────────────
 // Property endpoints
 // ─────────────────────────────────────────────
 export const propertyApi = {
