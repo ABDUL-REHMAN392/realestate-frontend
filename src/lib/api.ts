@@ -135,6 +135,16 @@ export const propertyApi = {
 };
 
 // ─────────────────────────────────────────────
+// Favorites
+// ─────────────────────────────────────────────
+export const favoriteApi = {
+  getAll:  (params?: object) => api.get("/favorites", { params }),
+  toggle:  (propertyId: string) => api.post(`/favorites/${propertyId}`),
+  check:   (propertyId: string) => api.get(`/favorites/${propertyId}/check`),
+  remove:  (propertyId: string) => api.delete(`/favorites/${propertyId}`),
+};
+
+// ─────────────────────────────────────────────
 // Notifications
 // ─────────────────────────────────────────────
 export const notificationApi = {
