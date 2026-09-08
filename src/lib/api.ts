@@ -178,6 +178,16 @@ export const favoriteApi = {
 };
 
 // ─────────────────────────────────────────────
+// Compare Properties 
+// ─────────────────────────────────────────────
+export const compareApi = {
+  // GET /api/v1/compare?ids=id1,id2,id3,id4
+  // Returns: { properties[], winners: { price, area, bedrooms, bathrooms }, summary }
+  compare: (ids: string[]) =>
+    api.get("/compare", { params: { ids: ids.join(",") } }),
+};
+
+// ─────────────────────────────────────────────
 // Notifications
 // ─────────────────────────────────────────────
 export const notificationApi = {
